@@ -1,171 +1,73 @@
-#include <iostream>
+//stack
+#include<iostream>
 using namespace std;
-#define max 5
+#define n 10
 
 class stack
- {
-
-
+{
+int *arr;
+int Top;
 
 public:
-	 
-	int array[max];
-	int top;
+stack()
+{
+	arr=new int [n];  //alocate memeory to stack
+	Top=-1;           //
+}
+ void push(int x)
+ {
+	 if(Top==n-1)   //cheak if top is full
+	 {
+		cout<<"stack overflow "<<endl;    
+		return;
+	 }
 
-
-
-
-
-	stack() {
-
-		top = -1;
-
-
+	 Top++;
+	 arr[Top]=x;   //push value in stack;
+ }
+    int pop()
+	{
+		if(Top==-1)
+       {
+			cout<<"stack is empty "<<endl;  
+			return -1;
+	   } 
+	   Top--;     //pop element from stack
 	}
-
-
-	bool isempty() {
-
-
-		if (top == -1) {
-
-			return true;
-		}
-
-
-		else
-		{
-			return false;
-		}
-	}
-
-
-	bool isfull() {
-
-
-		if (top ==max-1) {
-
-			return true;
-		}
-
-
-		else
-		{
-			return false;
-		}
-	}
-
-
-
-	int size() {
-
-
-
-		return max;
-	}
-
-
-
-	void push(int num) {
-
-
-
-		if (!isfull()) {
-
-
-			array[++top] = num;
-
-			cout << "the number" << num << "is pushed at index" << top;
-			cout << endl;
-
-
-		}
-
-		else  {
-
-			cout << "the stack is full" << endl;
-
-
-
-		}
-
-	}
-
-
-
-
-	void pop() {
-
-
-
-		if (!isempty()) {
-
-
-			
-
-			cout << array[top] << "is poped from index";
-			cout << endl;
-
-
-		}
-
-		else {
-
-			cout << "the stack is empty" << endl;
-
-
-
-		}
-
-	}
-
-	int top() {
-
-
-
-
-		if (!isempty()) {
-
-
-			cout << array[top] << "is the last element of stack" << endl;
-
-		}
-	}
-
-
-
+      
+     int top()
+	 {
+		if(Top==-1)
+       {
+			cout<<"stack is empty "<<endl;  
+			return -1 ;
+	   } 
+        return arr[Top];
+	 }
+
+	 bool empty()
+	 {  
+	    if(empty()) 
+	  return -1;
+		
+	 }
 };
 
+int main()
+{
+stack st;
+ st.push(2);
+ st.push(5);
+ st.push(9);
+   
 
+  cout<<"top is"<<st.top()<<endl;
+    st.pop();
+  cout<<"top is"<<st.top()<<endl;
+      st.pop();
+  cout<<"top is"<<st.top()<<endl;
+      st.pop();
 
-int main() {
-
-
-
-
-
-
-	stack s;
-
-	s.isempty();
-	s.isfull();
-
-	int sizee;
-	sizee = s.size();
-
-	cout << "the size of the array is" << sizee;
-
-	s.push(5);
-	s.push(4);
-	s.push(3);
-	s.push(2);
-	s.push(1);
-
-
-	s.pop();
-
-
-	
-	s.top();
-    
+  cout<< st.empty();
+return 0;
 }
