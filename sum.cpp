@@ -14,43 +14,50 @@ stack()
 	arr=new int [n];  //alocate memeory to stack
 	Top=-1;           //
 }
- void push(int x)
- {
-	 if(Top==n-1)   //cheak if top is full
-	 {
-		cout<<"stack overflow "<<endl;    
-		return;
-	 }
 
-	 Top++;
-	 arr[Top]=x;   //push value in stack;
- }
-    int pop()
-	{
-		if(Top==-1)
+//push function 
+ void push(int x)
+   {
+       if(Top==n-1)   //cheak if top is full
        {
-			cout<<"stack is empty "<<endl;  
-			return -1;
-	   } 
+         cout<<"stack overflow "<<endl;    
+         return;
+       }
+
+          Top++;
+            arr[Top]=x;   //push value in stack;
+  }
+
+//pop function
+  int pop()
+   {
+	   if(Top==-1)
+       {
+	   cout<<"stack is empty "<<endl;  
+	   return -1;
+        } 
 	   Top--;     //pop element from stack
-	}
-      
+   }
+
+//for cheak top of stack
      int top()
 	 {
-		if(Top==-1)
-       {
-			cout<<"stack is empty "<<endl;  
-			return -1 ;
-	   } 
-        return arr[Top];
+	    if(Top==-1)
+            {
+	     cout<<"stack is empty "<<endl;  
+	     return -1 ;
+	    } 
+              return arr[Top];
 	 }
+
+//for cheak stack empty
+
 
 	 bool empty()
 	 {  
-	    if(empty()) 
+	  if(empty()) 
 	  return -1;
-		
-	 }
+	}
 };
 
 int main()
