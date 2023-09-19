@@ -60,8 +60,8 @@ stack st;
  st.push(5);
  st.push(9);
    
-
-  cout<<"top is"<<st.top()<<endl;
+//display stack
+  cout<<"top is"<<st.top()<<endl;      
     st.pop();
   cout<<"top is"<<st.top()<<endl;
       st.pop();
